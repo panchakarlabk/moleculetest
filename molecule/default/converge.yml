@@ -1,0 +1,10 @@
+---
+- name: Include a role from a collection
+  hosts: centos_os
+  gather_facts: false
+  #become: true
+  tasks:
+    - name: Testing role
+      ansible.builtin.include_role:
+        name: /home/ansible/test/web/
+        tasks_from: main.yml
